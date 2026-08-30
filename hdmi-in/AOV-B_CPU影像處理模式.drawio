@@ -1,0 +1,76 @@
+<mxfile host="Electron">
+  <diagram name="AOV-B_CPU影像處理模式" id="hdmi_aov_b">
+    <mxGraphModel dx="1436" dy="803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1620" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="stage_VI (dvi2rgb 側)" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=top;align=left;dashed=1;strokeColor=#999999;fontColor=#666666;fontSize=13;spacingLeft=8;spacingTop=6;fillColor=light-dark(#FFFFFF,#333333);" value="&lt;font style=&quot;font-size: 16px; color: light-dark(rgb(0, 0, 0), rgb(204, 204, 204));&quot;&gt;VI (dvi2rgb 側)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="300" width="470" x="40" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="stage_系統邊界 (DDR, 共用 3-frame pool)" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=top;align=left;dashed=1;strokeColor=#999999;fontColor=#666666;fontSize=13;spacingLeft=8;spacingTop=6;fillColor=light-dark(#FFFFFF,#333333);" value="&lt;font style=&quot;font-size: 16px; color: light-dark(rgb(0, 0, 0), rgb(204, 204, 204));&quot;&gt;系統邊界 (DDR, 共用 3-frame pool)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="350" width="280" x="550" y="14" as="geometry" />
+        </mxCell>
+        <mxCell id="stage_IP (軟體, ARM Cortex-A9)" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=top;align=left;dashed=1;strokeColor=#999999;fontColor=#666666;fontSize=13;spacingLeft=8;spacingTop=6;fillColor=light-dark(#FFFFFF,#333333);" value="&lt;font style=&quot;font-size: 16px; color: light-dark(rgb(0, 0, 0), rgb(204, 204, 204));&quot;&gt;IP (軟體, ARM Cortex-A9)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="293" width="280" x="550" y="407" as="geometry" />
+        </mxCell>
+        <mxCell id="stage_VO (rgb2dvi 側)" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=top;align=left;dashed=1;strokeColor=#999999;fontColor=#666666;fontSize=13;spacingLeft=8;spacingTop=6;fillColor=light-dark(#FFFFFF,#333333);" value="&lt;font style=&quot;font-size: 16px; color: light-dark(rgb(0, 0, 0), rgb(204, 204, 204));&quot;&gt;VO (rgb2dvi 側)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="301" width="520" x="870" y="14" as="geometry" />
+        </mxCell>
+        <mxCell id="B_VI" parent="1" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=middle;align=center;fillColor=#DCEBFA;strokeColor=#5B9BD5;strokeWidth=3;fontColor=#222222;aspect=fixed;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;video_in&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;RGB24, 24bit&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="140" x="40" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="B_MERGE" parent="1" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=middle;align=center;fillColor=#DCEBFA;strokeColor=#5B9BD5;strokeWidth=3;fontColor=#222222;aspect=fixed;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;merge&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;RGB24→AXI-Stream&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="210" x="280" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="B_DDR" parent="1" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=middle;align=center;fillColor=#FBF3CF;strokeColor=#D4B93C;strokeWidth=3;fontColor=#222222;aspect=fixed;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;DDR&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;RGB24, 24bit&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;3 frames&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="140" x="620" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="B_SLICE" parent="1" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=middle;align=center;fillColor=#DCEBFA;strokeColor=#5B9BD5;strokeWidth=3;fontColor=#222222;aspect=fixed;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;slice&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;AXI-Stream→RGB24&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="210" x="885" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="B_VO" parent="1" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=middle;align=center;fillColor=#DCEBFA;strokeColor=#5B9BD5;strokeWidth=3;fontColor=#222222;aspect=fixed;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;video_out&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;RGB24, 24bit&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="140" x="1230" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="B_IP" parent="1" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=middle;align=center;fillColor=#DFF3DC;strokeColor=#6FAE5E;strokeWidth=3;fontColor=#222222;aspect=fixed;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;user_ip&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;DemoInvertFrame /&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;DemoScaleFrame (軟體)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="240" x="570" y="441" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="B_VI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;jumpStyle=arc;" target="B_MERGE" value="1 clk/pixel&lt;br&gt;RGB24(24bit)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="B_MERGE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;jumpStyle=arc;" target="B_DDR" value="S2MM write&lt;br&gt;1 clk/pixel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="B_DDR" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;jumpStyle=arc;" target="B_SLICE" value="MM2S read&lt;br&gt;1 clk/pixel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="B_SLICE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;jumpStyle=arc;" target="B_VO" value="1 clk/pixel&lt;br&gt;RGB24(24bit)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="B_DDR" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;jumpStyle=arc;" target="B_IP" value="CPU讀取(curFrame)&lt;br&gt;ARM LDR, cached">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="160" />
+              <mxPoint x="780" y="340" />
+              <mxPoint x="530" y="340" />
+              <mxPoint x="530" y="561" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="B_IP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;jumpStyle=arc;" target="B_DDR" value="CPU寫入(nextFrame)&lt;br&gt;+Xil_DCacheFlushRange">
+          <mxGeometry relative="1" x="0.4093" y="-10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="850" y="561" />
+              <mxPoint x="850" y="290" />
+              <mxPoint x="600" y="290" />
+              <mxPoint x="600" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note" parent="1" style="whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=12;fontColor=#666666;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;備註：CPU 直接透過 ARM 的記憶體介面存取 DDR，不經過 VDMA/AXI4-Stream，故 user_ip 前後不需要 slice/merge。timing_class=可調時序，T_IP = T_init + t_pix×W×H（公式7）中的 t_pix 目前為估算值，尚待以 SCUTIMER 於硬體上實測取代（見下方 TSPEC-B 說明）。&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="1540" x="40" y="710" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

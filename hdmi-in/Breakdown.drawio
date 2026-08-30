@@ -1,0 +1,332 @@
+<mxfile host="Electron">
+  <diagram name="Breakdown" id="hdmi_breakdown_0001">
+    <mxGraphModel dx="4147" dy="1873" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="8555" pageHeight="840" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ROOT" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;design_1_wrapper&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Zybo Z7-20 HDMI (Zynq-7000)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="74" width="309" x="4103" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="H_PS" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;PS7 韌體&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;video_demo.c 應用程式&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="74" width="237" x="954" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_DISP" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;fillColor=light-dark(#FFFFFF,#1F4B46);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;display_ctrl.c&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;顯示路徑控制&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="94" width="159" x="261" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_DISP_P1" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;process&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;DisplayInitialize/SetMode/Start/Stop&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;VDMA讀通道+v_tc_out+PLL控制&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="336" x="4" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_DISP_P2" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;process&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;DisplayChangeFrame&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;讀出指標parking切換&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="211" x="363" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_VID" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;fillColor=light-dark(#FFFFFF,#5C3812);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;video_capture.c&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;擷取路徑控制&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="94" width="168" x="780" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_VID_P1" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;process&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;VideoInitialize/Start/Stop/&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;ChangeFrame&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;VDMA寫通道控制&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="241" x="602" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_VID_P2" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;process&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;GpioIsr → VtcIsr&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;兩段式訊號偵測中斷鏈&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="218" x="881" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_CLK" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;fillColor=light-dark(#FFFFFF,#40245B);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;dynclk.c&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;動態像素時脈計算&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="178" x="1327" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_CLK_P1" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;process&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;ClkFindParams/ClkFindReg&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;分頻參數搜尋+XAPP888查表&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="276" x="1134" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_CLK_P2" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;process&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;ClkWriteReg/ClkStart/ClkStop&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;AXI-Lite暫存器讀寫+狀態輪詢&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="282" x="1444" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_INTC" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;fillColor=light-dark(#FFFFFF,#2E2E2E);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;intc.c&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;中斷控制器包裝(沿用不變)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="251" x="1601" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="SW_TMR" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;fillColor=light-dark(#FFFFFF,#2E2E2E);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;timer_ps.c&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;SCUTIMER忙等延遲(沿用不變)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="296" x="1875" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="H_PL" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;PL 硬體&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;design_1 block design (19 IP)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="74" width="329" x="5161" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_DVI" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;fillColor=light-dark(#FFFFFF,#5C3812);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;dvi2rgb_1&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;TMDS解碼 (可編輯 IP Repo)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="271" x="2455" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_DVI_1" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;TMDS_Clocking&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;TMDS時脈回復(MMCM)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="232" x="2013" y="621" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_DVI_2" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;aspect=fixed;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;InputSERDES+ChannelBond+PhaseAlign&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;序列轉並行+通道對齊+相位校正&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="141.58" width="390" x="2256" y="604" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_DVI_3" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;TMDS_Decoder&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;10b→8b TMDS解碼&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="195" x="2660" y="621" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_DVI_4" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;TWI_SlaveCtl+EEPROM_8b&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;DDC/EDID I2C從端模擬&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="272" x="2866" y="621" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_VIN" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#5C3812);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;v_vid_in_axi4s_0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;video→AXI4-Stream (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="296" x="3075" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_CIN" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#5C3812);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;axis_subset_converter_in&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;介面轉換 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="250" x="3407" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_GPIO" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#5C3812);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;axi_gpio_video&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;HPD/Locked (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="232" x="3693" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_RGB" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;fillColor=light-dark(#FFFFFF,#1F4B46);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;rgb2dvi_0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;TMDS編碼 (可編輯 IP Repo)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="271" x="4069" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_RGB_1" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;ClockGen&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;序列/像素時脈管理&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="184" x="3905" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_RGB_2" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;TMDS_Encoder&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;8b→10b TMDS編碼&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="195" x="4108" y="621" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_RGB_3" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;OutputSERDES&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;並行轉高速序列&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="160" x="4316" y="621" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_VOUT" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#1F4B46);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;v_axi4s_vid_out_0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;AXI4-Stream→video (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="296" x="4484" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_COUT" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#1F4B46);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;axis_subset_converter_out&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;介面轉換 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="257" x="4818" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_VDMA" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#4A1E1E);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;axi_vdma_0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;S2MM⇄MM2S DMA (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="290" x="5097" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_HP0" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#4A1E1E);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;axi_mem_intercon_HP0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;VDMA↔DDR 互連 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔資料路徑〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="276" x="5398" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_DYNCLK" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;fillColor=light-dark(#FFFFFF,#40245B);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;axi_dynclk_0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;動態PLL (可編輯 IP Repo)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="249" x="5773" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_DYN_1" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;axi_dynclk_S00_AXI&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;8個AXI-Lite暫存器&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="201" x="5675" y="621" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_DYN_2" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;子模組&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;mmcme2_drp + BUFIO/BUFR&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;動態改MMCM分頻+5:1除頻輸出&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="302" x="5894" y="621" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_VTCIN" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#565600);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;v_tc_in&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;時序偵測器 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="221" x="6131" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_VTCOUT" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#565600);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;v_tc_out&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;時序產生器 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="221" x="6388" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_GP0X" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#2E2E2E);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;ps7_0_axi_periph_GP0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;AXI-Lite扇出 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="246" x="6645" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_XLC" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#2E2E2E);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;xlconcat_0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;中斷彙整 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="205" x="6927" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_XLK" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#2E2E2E);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;xlconstant_0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;常數驅動 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="205" x="7168" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_RST0" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#2E2E2E);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;proc_sys_reset_0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;輸入像素時脈網域重置 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="309" x="7405" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_RST100" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#2E2E2E);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;rst_ps7_0_100M&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;控制網域重置 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="237" x="7746" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_RST133" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;fillColor=light-dark(#FFFFFF,#2E2E2E);" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;rst_ps7_0_133M&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;VDMA/DDR網域重置 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;〔控制/狀態旁支〕&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="296" x="8010" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="PL_PS7" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=middle;align=center;rounded=1;dashed=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;IP&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;processing_system7_0&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Zynq PS7 (Xilinx IP)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="223" x="8329" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="SW_DISP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_DISP_P1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="SW_DISP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_DISP_P2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="SW_VID" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_VID_P1" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="548.43" />
+              <mxPoint x="737.43" y="548.43" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="SW_VID" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_VID_P2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="SW_CLK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_CLK_P1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="SW_CLK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_CLK_P2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="H_PS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_DISP" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="H_PS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_VID" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="H_PS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_CLK" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1072.6" y="322" />
+              <mxPoint x="1416" y="322" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="H_PS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_INTC" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1072.5" y="322" />
+              <mxPoint x="1726.5" y="322" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="H_PS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="SW_TMR" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1072.5" y="322" />
+              <mxPoint x="2023" y="322" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="PL_DVI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_DVI_1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="PL_DVI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_DVI_2" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2590" y="560" />
+              <mxPoint x="2451" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="PL_DVI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_DVI_3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="PL_DVI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_DVI_4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="PL_RGB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_RGB_1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="PL_RGB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_RGB_2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="PL_RGB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_RGB_3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="PL_DYNCLK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_DYN_1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="PL_DYNCLK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_DYN_2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_DVI" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5325.5" y="322" />
+              <mxPoint x="2590.5" y="322" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_VIN" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_CIN" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_GPIO" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_RGB" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5325.53" y="321.71" />
+              <mxPoint x="4204.47" y="321.71" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_VOUT" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_COUT" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5325.52" y="321.86" />
+              <mxPoint x="4946.48" y="321.86" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_VDMA" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5325.52" y="321.86" />
+              <mxPoint x="5242" y="321.86" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e29" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_HP0" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5325.52" y="321.68" />
+              <mxPoint x="5536" y="321.68" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e30" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_DYNCLK" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5325.52" y="321.68" />
+              <mxPoint x="5897.52" y="321.68" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e31" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_VTCIN" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e32" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_VTCOUT" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e33" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_GP0X" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e34" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_XLC" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e35" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_XLK" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e36" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_RST0" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5325.52" y="321.52" />
+              <mxPoint x="7559.52" y="321.52" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e37" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_RST100" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e38" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_RST133" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5325.52" y="321.52" />
+              <mxPoint x="8158" y="321.52" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e39" edge="1" parent="1" source="H_PL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="PL_PS7" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5325.53" y="321.71" />
+              <mxPoint x="8440.47" y="321.71" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e40" edge="1" parent="1" source="ROOT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="H_PS" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e41" edge="1" parent="1" source="ROOT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;" target="H_PL" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_note" parent="1" style="whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=13;fontColor=#666666;" value="&lt;font style=&quot;font-size: 20px; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;備註：同一顏色只代表「同一子系統分類」，節點排列順序不代表資料流順序。〔資料路徑〕 = 節點確實承載像素資料（在 dvi2rgb→...→rgb2dvi 這條鏈路上）；〔控制/狀態旁支〕 = 控制/狀態/時脈/重置訊號，不承載像素資料，只是跟同一子系統相關而分在同一組（例如 axi_gpio_video 只負責 HPD/Locked，不在擷取資料路徑上）。真正的資料流順序請看 方塊圖_電路圖.drawio。&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="1400" x="40" y="770" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
