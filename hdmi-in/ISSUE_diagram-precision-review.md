@@ -4,6 +4,8 @@
 
 **是，而且是具體、可指認的幾個地方更精確，不是泛泛而談的「畫得比較好看」。** 逐項列在下面，每一項都標明「新增的正確細節」還是「新增的分析層次」，而不是含糊地說「新版比較好」。
 
+**更新（術語修正）**：文中/圖中原本泛稱的「IP」（例如「19顆IP」「可編輯IP」），依論文定義應正名為 **SIP**（矽智財，Silicon Intellectual Property——可獨立整合與驗證、有明確介面的硬體模組）。論文裡的「IP」專指 `VI–IP–VO` 管線中「處理」這個**架構角色**，可以由 0、1 或多顆 SIP 填入，不是元件種類，兩者不能混用。詳見 `# CLAUDE.md` 的術語辨正。本文與 `Breakdown.drawio` 已依此更新，`AOV-A`/`AOV-B` 裡的 `user_ip` 綠色節點不受影響（那本來就是論文自己的角色名稱）。
+
 ---
 
 ## 1. 系統總覽：`方塊圖_電路圖.drawio` vs `HDMI_DATAFLOW.md` 圖 1
@@ -12,22 +14,22 @@
 *（圖較大，點圖看原始解析度；或開啟 [方塊圖_電路圖.drawio](方塊圖_電路圖.drawio) 用 draw.io 無限縮放）*
 
 **新增的正確細節：`hdmi_out_ddc` 是 PS7 的 `IIC_0` 直接接出去的，不經過任何 FPGA 邏輯。**
-這是對照 `design_1_bd.tcl` 第 808 行 `processing_system7_0_IIC_0` 這條連線才發現的，`HDMI_DATAFLOW.md` 原本的 Mermaid 圖完全沒有畫出這條線——原圖只畫了控制面對 5 顆 IP 的 AXI-Lite 扇出，沒有畫 PS7 這條額外的直連 I2C。這不是風格差異，是原圖漏掉了一條真實存在的連線。
+這是對照 `design_1_bd.tcl` 第 808 行 `processing_system7_0_IIC_0` 這條連線才發現的，`HDMI_DATAFLOW.md` 原本的 Mermaid 圖完全沒有畫出這條線——原圖只畫了控制面對 5 顆 SIP 的 AXI-Lite 扇出，沒有畫 PS7 這條額外的直連 I2C。這不是風格差異，是原圖漏掉了一條真實存在的連線。
 
 **新增的正確層次：中斷彙整線路重新合併回同一張圖。**
 `HDMI_DATAFLOW.md` 因為 Mermaid 沒有「跳線」功能，中斷彙整（`xlconcat_0`）被迫拆成獨立的「圖 2b」，讀者要對照兩張圖才能理解中斷怎麼跟控制/資料面互動。`方塊圖_電路圖.drawio` 用 draw.io 原生的 `jumpStyle=arc` 把交叉的線做跳線處理，中斷、AXI-Lite 控制、資料面三種線可以合併回**一張完整的圖**，資訊沒有變多，但完整性跟可讀性都提升了。
 
 ---
 
-## 2. 元件總表：`Breakdown.drawio` vs `HDMI_DATAFLOW.md` 的「IP 節點總表」
+## 2. 元件總表：`Breakdown.drawio` vs `HDMI_DATAFLOW.md` 的「SIP 節點總表」
 
 [![Breakdown](image/Breakdown.drawio.png)](image/Breakdown.drawio.png)
 *（這張最大，原圖 16384×1557px，強烈建議點圖看原始解析度；或開啟 [Breakdown.drawio](Breakdown.drawio) 用 draw.io 無限縮放）*
 
-**新增的分析層次：3 顆可編輯 IP 的內部子模組，原本的文字表沒有列到這麼深。**
-`HDMI_DATAFLOW.md` 的 IP 節點總表只列到 19 顆頂層 IP 這一層（例如「`dvi2rgb_1` — TMDS 解碼器」），沒有再往下拆。`Breakdown.drawio` 多了第三層，把 `dvi2rgb_1`／`rgb2dvi_0`／`axi_dynclk_0` 底下實際的原始碼檔案（`TMDS_Clocking`、`InputSERDES+ChannelBond+PhaseAlign`、`mmcme2_drp+BUFIO/BUFR` 等）都畫成子節點，這些檔名跟角色是我們逐行讀過 `axi_dynclk.vhd`/`axi_dynclk_S00_AXI.vhd` 之後才寫得出來的，原本的文字表完全沒有這個深度。
+**新增的分析層次：3 顆可編輯 SIP 的內部子模組，原本的文字表沒有列到這麼深。**
+`HDMI_DATAFLOW.md` 的 SIP 節點總表只列到 19 顆頂層 SIP 這一層（例如「`dvi2rgb_1` — TMDS 解碼器」），沒有再往下拆。`Breakdown.drawio` 多了第三層，把 `dvi2rgb_1`／`rgb2dvi_0`／`axi_dynclk_0` 底下實際的原始碼檔案（`TMDS_Clocking`、`InputSERDES+ChannelBond+PhaseAlign`、`mmcme2_drp+BUFIO/BUFR` 等）都畫成子節點，這些檔名跟角色是我們逐行讀過 `axi_dynclk.vhd`/`axi_dynclk_S00_AXI.vhd` 之後才寫得出來的，原本的文字表完全沒有這個深度。
 
-**新增的正確標記：可編輯 vs 廠商封裝 IP 的視覺區分（實線／虛線），以及資料路徑 vs 控制旁支的標記。**
+**新增的正確標記：可編輯 vs 廠商封裝 SIP 的視覺區分（實線／虛線），以及資料路徑 vs 控制旁支的標記。**
 這兩個維度原本只存在於 `HDMI_DATAFLOW.md` 的**文字敘述**裡（例如「只有 3 顆可編輯」這句話），不是圖上可以直接看出來的視覺屬性。`Breakdown.drawio` 把「能不能編輯」做成實線/虛線、「是不是真的承載像素資料」做成〔資料路徑〕/〔控制‧狀態旁支〕標籤，直接畫在每個節點上，不用再回頭讀文字才能確認。
 
 ---
@@ -65,7 +67,7 @@ TSPEC-A 的每一個時間數字（`T_line`、`T_burst`……）都能用公式 
 | 檔案 | 相對 `HDMI_DATAFLOW.md` 的關係 |
 | --- | --- |
 | `方塊圖_電路圖.drawio` | 修正遺漏（PS7 直連 DDC）+ 合併回單一完整圖 |
-| `Breakdown.drawio` | 補上原本只到頂層的深度（3 顆可編輯 IP 的內部子模組）+ 把文字敘述做成可視化標記 |
+| `Breakdown.drawio` | 補上原本只到頂層的深度（3 顆可編輯 SIP 的內部子模組）+ 把文字敘述做成可視化標記 |
 | `AOV-A`/`AOV-B` | 全新分析層，套用論文的形式化規則 |
 | `TSPEC-A` | 全新分析層，第一次給出真實時序數字 |
 | `TSPEC-B` | 尚未產生，卡在缺一個需要實測才能取得的數字（`t_pix`） |
